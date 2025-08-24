@@ -45,6 +45,7 @@ curl --retry 3 -Lo /etc/flatpak/remotes.d/flathub.flatpakrepo https://dl.flathub
 ### Install packages
 PACKAGES=(
   alacritty
+  aylurs-gtk-shell
   bootc
   brightnessctl
   curl
@@ -117,5 +118,8 @@ DX_PACKAGES=(
 
 # this installs a package from fedora repos
 dnf5 install -y "${PACKAGES[@]}" "${DX_PACKAGES[@]}"
+
+# install chezmoi for managing dotfiles
+/ctx/build_files/utils/github-release-install.sh twpayne/chezmoi x86_64
 
 echo "::endgroup::"
