@@ -96,9 +96,9 @@ build $target_image=image_name $tag=default_tag:
 
     LABELS=()
     LABELS+=("--label" "org.opencontainers.image.title=${image_name}")
-    LABELS+=("--label" "org.opencontainers.image.source https://github.com/TekuNut/teku-niri")
-    LABELS+=("--label" "containers.bootc 1")
-    LABELS+=("--label" "ostree.bootable 1")
+    LABELS+=("--label" "org.opencontainers.image.source=https://github.com/TekuNut/teku-niri")
+    LABELS+=("--label" "containers.bootc=1")
+    LABELS+=("--label" "ostree.bootable=1")
 
     podman build \
         "${BUILD_ARGS[@]}" \

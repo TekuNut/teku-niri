@@ -1,0 +1,11 @@
+[Unit]
+Description=Animated wallpaper daemon
+
+[Service]
+ExecStart=/usr/bin/swww-daemon
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
+

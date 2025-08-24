@@ -6,6 +6,7 @@ echo "::group:: Install packages"
 
 
 dnf5 -y copr enable che/nerd-fonts fedora-42-x86_64
+dnf5 -y copr enable solopasha/hyprland
 
 # use negativo17 for 3rd party packages with higher priority than default
 if ! grep -q fedora-multimedia <(dnf5 repolist); then
@@ -59,10 +60,12 @@ PACKAGES=(
   setools-console
   swaybg
   swayidle
+  swww
   Thunar
   thunar-archive-plugin
   thunar-volman
   waybar
+  waypaper
   xdg-desktop-portal-gtk
   xdg-desktop-portal-gnome
   xwayland-satellite
@@ -100,7 +103,6 @@ DX_PACKAGES=(
   virt-manager
   virt-viewer
 )
-
 
 
 # this installs a package from fedora repos

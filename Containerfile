@@ -18,7 +18,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx/ \
     --mount=type=cache,dst=/var/cache/libdnf5 \
     --mount=type=cache,dst=/var/cache/rpm-ostree \
     --mount=type=tmpfs,dst=/tmp \
-    dnf5 -y install dnf5-plugins rsync && rsync -rlvK /ctx/system_files/
+    dnf5 -y install dnf5-plugins rsync && rsync -rlvK /ctx/system_files/ /
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx/ \
     --mount=type=cache,dst=/var/cache/libdnf5 \

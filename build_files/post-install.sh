@@ -11,12 +11,13 @@ dnf5 versionlock clear
 systemctl enable podman.socket
 
 # Install wants for niri.service
-install -d -m 0755 /usr/lib/systemd/user/niri.service.wants
-ln -s ../waybar.service /usr/lib/systemd/user/niri.service.wants/waybar.service
-ln -s ../mako.service /usr/lib/systemd/user/niri.service.wants/mako.service
+systemctl --global add-wants niri.service waybar.service
+systemctl --global add-wants niri.service mako.service
+systemctl --global add-wants niri.service swww.service
 
 # Disable all COPRs
 dnf5 -y copr disable che/nerd-fonts
+dnf5 -y copr disable solopasha/hyprland
 echo "::endgroup::"
 
 echo "::group:: Cleanup"
