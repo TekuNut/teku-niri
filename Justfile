@@ -94,8 +94,15 @@ build $target_image=image_name $tag=default_tag:
         BUILD_ARGS+=("--build-arg" "SHA_HEAD_SHORT=$(git rev-parse --short HEAD)")
     fi
 
+    LABELS=()
+    LABELS+=("--label" "org.opencontainers.image.title=${image_name}")
+    LABELS+=("--label" "org.opencontainers.image.source https://github.com/TekuNut/teku-niri")
+    LABELS+=("--label" "containers.bootc 1")
+    LABELS+=("--label" "ostree.bootable 1")
+
     podman build \
         "${BUILD_ARGS[@]}" \
+        "${LABELS[@]}" \
         --pull=newer \
         --tag "${target_image}:${tag}" \
         .
