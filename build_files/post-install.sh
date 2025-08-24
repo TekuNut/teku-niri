@@ -14,10 +14,12 @@ systemctl enable podman.socket
 systemctl --global add-wants niri.service waybar.service
 systemctl --global add-wants niri.service mako.service
 systemctl --global add-wants niri.service swww.service
+systemctl --global add-wants niri.service xwayland-satellite.service
 
 # Disable all COPRs
 dnf5 -y copr disable che/nerd-fonts
 dnf5 -y copr disable solopasha/hyprland
+dnf5 -y copr disable ublue-os/packages
 echo "::endgroup::"
 
 echo "::group:: Cleanup"

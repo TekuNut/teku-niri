@@ -7,6 +7,7 @@ echo "::group:: Install packages"
 
 dnf5 -y copr enable che/nerd-fonts fedora-42-x86_64
 dnf5 -y copr enable solopasha/hyprland
+dnf5 -y copr enable ublue-os/packages
 
 # use negativo17 for 3rd party packages with higher priority than default
 if ! grep -q fedora-multimedia <(dnf5 repolist); then
@@ -46,6 +47,8 @@ PACKAGES=(
   alacritty
   bootc
   brightnessctl
+  curl
+  file
   fuzzel
   gnome-keyring
   grim
@@ -55,6 +58,7 @@ PACKAGES=(
   mako
   nerd-fonts
   niri
+  procps-ng
   sddm
   sddm-themes
   setools-console
@@ -78,6 +82,11 @@ DX_PACKAGES=(
   bpftop
   bpftrace
   cascadia-code-fonts
+  code
+  docker-buildkit
+  docker-buildx
+  docker-compose
+  docker-cli
   google-droid-sans-mono-fonts
   google-go-mono-fonts
   ibm-plex-mono-fonts
@@ -100,6 +109,7 @@ DX_PACKAGES=(
   qemu-system-x86-core
   qemu-user-binfmt
   sysprof
+  ublue-brew
   virt-manager
   virt-viewer
 )
