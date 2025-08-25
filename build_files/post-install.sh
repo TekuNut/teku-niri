@@ -4,6 +4,9 @@ set -eoux pipefail
 
 echo "::group:: Post installation"
 
+# Set zsh as the default shell for new users
+sed -i 's/^SHELL=.*/SHELL=\/bin\/zsh/' /etc/default/useradd
+
 # Remove dnf5 versionlocks
 dnf5 versionlock clear
 

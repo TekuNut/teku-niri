@@ -13,25 +13,25 @@ echo "::group:: Install packages"
 # # Set higher priority
 # dnf5 config-manager setopt fedora-multimedia.priority=90
 
+
 # use override to replace mesa and others with less crippled versions
-OVERRIDES=(
-    "libva"
-    "intel-gmmlib"
-    "intel-vpl-gpu-rt"
-    "intel-mediasdk"
-    "libva-intel-media-driver"
-    "mesa-dri-drivers"
-    "mesa-filesystem"
-    "mesa-libEGL"
-    "mesa-libGL"
-    "mesa-libgbm"
-    "mesa-va-drivers"
-    "mesa-vulkan-drivers"
-)
-
-dnf5 distro-sync -y --repo='fedora-multimedia' "${OVERRIDES[@]}"
-dnf5 versionlock add "${OVERRIDES[@]}"
-
+# OVERRIDES=(
+#     "libva"
+#     "intel-gmmlib"
+#     "intel-vpl-gpu-rt"
+#     "intel-mediasdk"
+#     "libva-intel-media-driver"
+#     "mesa-dri-drivers"
+#     "mesa-filesystem"
+#     "mesa-libEGL"
+#     "mesa-libGL"
+#     "mesa-libgbm"
+#     "mesa-va-drivers"
+#     "mesa-vulkan-drivers"
+# )
+#
+# dnf5 distro-sync -y --repo='fedora-multimedia' "${OVERRIDES[@]}"
+# dnf5 versionlock add "${OVERRIDES[@]}"
 
 # Add Flathub to the image for eventual application
 mkdir -p /etc/flatpak/remotes.d/

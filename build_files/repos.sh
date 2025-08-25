@@ -4,6 +4,9 @@ set -eoux pipefail
 
 echo "::group:: Configure Repos"
 
+# Enable openh264 for rpmfusion
+dnf config-manager setopt fedora-cisco-openh264.enabled=1
+
 dnf5 -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 dnf5 -y copr enable che/nerd-fonts fedora-42-x86_64
