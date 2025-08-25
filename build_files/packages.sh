@@ -54,6 +54,7 @@ PACKAGES=(
   gnome-keyring
   grim
   jetbrains-mono-fonts-all
+  just
   neovim
   make
   mako
@@ -102,6 +103,9 @@ DX_PACKAGES=(
   osbuild-selinux
   p7zip
   p7zip-plugins
+  podman-compose
+  podman-machine
+  podman-tui
   qemu
   qemu-char-spice
   qemu-device-display-virtio-gpu
