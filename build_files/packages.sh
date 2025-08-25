@@ -46,6 +46,7 @@ PACKAGES=(
   curl
   file
   fuzzel
+  gamescope
   gnome-keyring
   grim
   jetbrains-mono-fonts-all
